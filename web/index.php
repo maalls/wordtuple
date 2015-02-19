@@ -102,7 +102,7 @@ $cursor = $collection->find(array('$query' => array(), '$orderby' => array("coun
                 <div class="col-lg-6 col-md-6 col-md-offset-3 col-ml-offset-3">
                     <form style="display:inline;" method="post">
                         <div class="panel panel-default">
-                            <div class="panel-heading">Database content <input type="submit" class="btn btn-default btn-sm" name="clear" value="Clear" onclick="return alert('sure ?')" /></div>
+                            <div class="panel-heading">Results <input type="submit" class="btn btn-default btn-sm" name="clear" value="Clear" onclick="return alert('sure ?')" /></div>
                             <div class="panel-body">
                             
                                 <table class="table table-striped">
