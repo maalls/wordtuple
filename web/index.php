@@ -76,7 +76,7 @@ $cursor = $collection->find(array('$query' => array(), '$orderby' => array("coun
 
         <div class="row text-center">
             <div class="col-lg-6 col-md-6 col-md-offset-3 col-ml-offset-3">
-                <h1>Word-Tuples Counter Demo</h1>
+                <h1>Word Tuples Counter Demo</h1>
                 <form method="post" enctype="multipart/form-data" class="form-inline center-block">
                     <div class="panel panel-default">
                             <div class="panel-heading">File upload (<a href="/sample.txt" download>click here to download a file sample</a>)</div>
@@ -108,9 +108,11 @@ $cursor = $collection->find(array('$query' => array(), '$orderby' => array("coun
                                 <table class="table table-striped">
                                     
                                     <?php while($row = $cursor->getNext()) { ?>
-                                        <tr>
-                                            <td><?php echo $row["tuple"] ?></td><td><?php echo $row["count"] ?></td>
-                                        </tr>
+                                        <?php if($row["count"] > 1) : ?>
+                                            <tr>
+                                                <td><?php echo $row["tuple"] ?></td><td><?php echo $row["count"] ?></td>
+                                            </tr>
+                                        <?php endif ?>
                                     <?php } ?>
                                     
                                 </table>
